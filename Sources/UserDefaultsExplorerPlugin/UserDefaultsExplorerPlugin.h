@@ -1,11 +1,3 @@
-//
-//  UserDefaultsExplorerPlugin.h
-//  UserDefaultsExplorerPlugin
-//
-//  Created by Takuya Ohsawa on 2020/08/19.
-//  Copyright © 2020 Takuya Ohsawa. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for UserDefaultsExplorerPlugin.

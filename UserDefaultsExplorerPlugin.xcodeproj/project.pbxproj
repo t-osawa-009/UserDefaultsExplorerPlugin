@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17CB004B24ED3655007FCCE5 /* UserDefaultsExplorerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 17CB004924ED3655007FCCE5 /* UserDefaultsExplorerPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17CB005224ED370E007FCCE5 /* UserDefaultsExplorerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB005124ED370E007FCCE5 /* UserDefaultsExplorerPlugin.swift */; };
-		17CB00AA24EE5BF1007FCCE5 /* DispatchQueue+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB00A924EE5BF1007FCCE5 /* DispatchQueue+ex.swift */; };
+		17CB00B824EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 17CB00B424EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17CB00B924EEA8B4007FCCE5 /* DispatchQueue+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB00B524EEA8B4007FCCE5 /* DispatchQueue+ex.swift */; };
+		17CB00BA24EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB00B624EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17CB004624ED3655007FCCE5 /* UserDefaultsExplorerPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserDefaultsExplorerPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		17CB004924ED3655007FCCE5 /* UserDefaultsExplorerPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultsExplorerPlugin.h; sourceTree = "<group>"; };
-		17CB004A24ED3655007FCCE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17CB005124ED370E007FCCE5 /* UserDefaultsExplorerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExplorerPlugin.swift; sourceTree = "<group>"; };
-		17CB00A924EE5BF1007FCCE5 /* DispatchQueue+ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ex.swift"; sourceTree = "<group>"; };
+		17CB00B424EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsExplorerPlugin.h; sourceTree = "<group>"; };
+		17CB00B524EEA8B4007FCCE5 /* DispatchQueue+ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ex.swift"; sourceTree = "<group>"; };
+		17CB00B624EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExplorerPlugin.swift; sourceTree = "<group>"; };
+		17CB00B724EEA8B4007FCCE5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +34,7 @@
 		17CB003C24ED3655007FCCE5 = {
 			isa = PBXGroup;
 			children = (
-				17CB004824ED3655007FCCE5 /* Sources */,
+				17CB00B224EEA8B4007FCCE5 /* Sources */,
 				17CB004724ED3655007FCCE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,23 +47,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17CB004824ED3655007FCCE5 /* Sources */ = {
+		17CB00B224EEA8B4007FCCE5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				17CB00A824EE5AEC007FCCE5 /* Ex */,
-				17CB004924ED3655007FCCE5 /* UserDefaultsExplorerPlugin.h */,
-				17CB004A24ED3655007FCCE5 /* Info.plist */,
-				17CB005124ED370E007FCCE5 /* UserDefaultsExplorerPlugin.swift */,
+				17CB00B324EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		17CB00A824EE5AEC007FCCE5 /* Ex */ = {
+		17CB00B324EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				17CB00A924EE5BF1007FCCE5 /* DispatchQueue+ex.swift */,
+				17CB00B424EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h */,
+				17CB00B524EEA8B4007FCCE5 /* DispatchQueue+ex.swift */,
+				17CB00B624EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift */,
+				17CB00B724EEA8B4007FCCE5 /* Info.plist */,
 			);
-			path = Ex;
+			path = UserDefaultsExplorerPlugin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,7 +73,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17CB004B24ED3655007FCCE5 /* UserDefaultsExplorerPlugin.h in Headers */,
+				17CB00B824EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17CB00AA24EE5BF1007FCCE5 /* DispatchQueue+ex.swift in Sources */,
-				17CB005224ED370E007FCCE5 /* UserDefaultsExplorerPlugin.swift in Sources */,
+				17CB00BA24EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift in Sources */,
+				17CB00B924EEA8B4007FCCE5 /* DispatchQueue+ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +284,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = Sources/UserDefaultsExplorerPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -296,6 +296,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,7 +313,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = Sources/UserDefaultsExplorerPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,6 +325,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
