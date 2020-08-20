@@ -7,7 +7,7 @@
 - Mac OS 10.15
 
 ## Usage
-Implementing UserDefaultsExplorerPlugin
+1. Implementing UserDefaultsExplorerPlugin
 ```swift
 import UIKit
 import UserDefaultsExplorerPlugin
@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 ```
-Start the application that implements UserDefaultsExplorerPlugin.
-Launch UserDefaultsExplorer.
-Allow network with each device by alert.
-Once the network is connected, tap the sync button for UserDefaultsExplorer.
+2. Start the application that implements UserDefaultsExplorerPlugin.
+2. Launch UserDefaultsExplorer.
+2. Allow network with each device by alert.
+2. Once the network is connected, tap the sync button for UserDefaultsExplorer.
 
 ## Install
 ### Cocoa Pods
