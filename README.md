@@ -26,6 +26,7 @@ Allow network with each device by alert.
 Once the network is connected, tap the sync button for UserDefaultsExplorer.
 
 ## Install
+### Cocoa Pods
 ```
 use_frameworks!
 pod 'UserDefaultsExplorerPlugin'
