@@ -9,6 +9,11 @@ import MultipeerConnectivity
 #endif
 
 public class UserDefaultsExplorerPlugin: NSObject {
+    // MARK: - internal
+    public func reconnect() {
+        multipeerConnectivityWrapper.setup(serviceType: multipeerConnectivityWrapper.serviceType)
+        multipeerConnectivityWrapper.reset()
+    }
     // MARK: - initializer
     public convenience init(serviceType: String? = nil, userDefaults: UserDefaults = UserDefaults.standard) {
         self.init()
@@ -160,6 +165,7 @@ private final class MultipeerConnectivityWrapper: NSObject {
     }
     
     func setup(serviceType: String) {
+        self.serviceType = serviceType
         nearbyServiceBrowser = .init(peer: peerID,
                                      serviceType: serviceType)
         session = .init(peer: peerID)
@@ -174,6 +180,7 @@ private final class MultipeerConnectivityWrapper: NSObject {
     }
     
     // MARK: - private
+    private(set) var serviceType: String!
     private var peerID: MCPeerID
     private var nearbyServiceBrowser: MCNearbyServiceBrowser!
     private var session: MCSession!
