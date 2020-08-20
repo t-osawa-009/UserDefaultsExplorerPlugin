@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "UserDefaultsExplorerPlugin",
+    platforms: [.iOS("11.0"), .macOS("10.15")],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
