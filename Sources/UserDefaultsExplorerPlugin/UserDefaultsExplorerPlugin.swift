@@ -1,11 +1,11 @@
 import Foundation
 import MultipeerConnectivity
 #if os(macOS)
-  import AppKit
+import AppKit
 #elseif os(iOS)
-  import UIKit
+import UIKit
 #elseif os(tvOS) || os(watchOS)
-  import UIKit
+import UIKit
 #endif
 
 public class UserDefaultsExplorerPlugin: NSObject {
@@ -14,6 +14,26 @@ public class UserDefaultsExplorerPlugin: NSObject {
         multipeerConnectivityWrapper.setup(serviceType: multipeerConnectivityWrapper.serviceType)
         multipeerConnectivityWrapper.reset()
     }
+    
+    public func convertXMLString() throws -> String {
+        let dic = userDefaults.dictionaryRepresentation()
+        let plistData = try PropertyListSerialization.data(fromPropertyList: dic, format: .xml, options: 0)
+        let xmlStr = String(data: plistData, encoding: .utf8) ?? ""
+        return xmlStr
+    }
+    
+    public func saveToUserDefaults(xmlData: Data) throws {
+        let propertyList = try PropertyListSerialization.propertyList(from: xmlData, options: [], format: nil)
+        guard let dic = propertyList as? [String: Any] else {
+            return
+        }
+        dic.forEach { (key, value) in
+            DispatchQueue.main.async { [weak self] in
+                self?.userDefaults.set(value, forKey: key)
+            }
+        }
+    }
+    
     // MARK: - initializer
     public convenience init(serviceType: String? = nil, userDefaults: UserDefaults = UserDefaults.standard) {
         self.init()
@@ -44,13 +64,8 @@ public class UserDefaultsExplorerPlugin: NSObject {
             }
             
             if let str = json["data"] as? String,
-                let data = str.data(using: .utf8),
-                let dic = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: Any] {
-                dic.forEach { (key, value) in
-                    DispatchQueue.main.async {
-                        _self.userDefaults.set(value, forKey: key)
-                    }
-                }
+                let data = str.data(using: .utf8) {
+                _ = try? _self.saveToUserDefaults(xmlData: data)
             }
         }
         send()
