@@ -35,6 +35,7 @@ public class UserDefaultsExplorerSocketPlugin: NSObject {
             }
         }
         start()
+        send()
     }
     
     private override init() {
