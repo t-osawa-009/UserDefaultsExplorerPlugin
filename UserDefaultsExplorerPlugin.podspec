@@ -11,4 +11,5 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = '10.15'
   spec.source_files = "Sources/**/*.{swift}", "Sources/*.{swift,h}"
   spec.swift_version = '5.2'
+  spec.dependency 'CocoaAsyncSocket'
 end

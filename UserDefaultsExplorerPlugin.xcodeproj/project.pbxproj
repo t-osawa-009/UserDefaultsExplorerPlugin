@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		17CB00B824EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 17CB00B424EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17CB00B924EEA8B4007FCCE5 /* DispatchQueue+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB00B524EEA8B4007FCCE5 /* DispatchQueue+ex.swift */; };
 		17CB00BA24EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB00B624EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift */; };
+		17F1E69D24F8DC7E00CCA514 /* UserDefaultsExplorerSocketPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1E69C24F8DC7E00CCA514 /* UserDefaultsExplorerSocketPlugin.swift */; };
+		17F1E6A024F8E09500CCA514 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 17F1E69F24F8E09500CCA514 /* CocoaAsyncSocket */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,7 @@
 		17CB00B524EEA8B4007FCCE5 /* DispatchQueue+ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ex.swift"; sourceTree = "<group>"; };
 		17CB00B624EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExplorerPlugin.swift; sourceTree = "<group>"; };
 		17CB00B724EEA8B4007FCCE5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F1E69C24F8DC7E00CCA514 /* UserDefaultsExplorerSocketPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExplorerSocketPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F1E6A024F8E09500CCA514 /* CocoaAsyncSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +65,7 @@
 				17CB00B424EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.h */,
 				17CB00B524EEA8B4007FCCE5 /* DispatchQueue+ex.swift */,
 				17CB00B624EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift */,
+				17F1E69C24F8DC7E00CCA514 /* UserDefaultsExplorerSocketPlugin.swift */,
 				17CB00B724EEA8B4007FCCE5 /* Info.plist */,
 			);
 			path = UserDefaultsExplorerPlugin;
@@ -94,6 +99,9 @@
 			dependencies = (
 			);
 			name = UserDefaultsExplorerPlugin;
+			packageProductDependencies = (
+				17F1E69F24F8E09500CCA514 /* CocoaAsyncSocket */,
+			);
 			productName = UserDefaultsExplorerPlugin;
 			productReference = 17CB004624ED3655007FCCE5 /* UserDefaultsExplorerPlugin.framework */;
 			productType = "com.apple.product-type.framework";
@@ -122,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 17CB003C24ED3655007FCCE5;
+			packageReferences = (
+				17F1E69E24F8E09500CCA514 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */,
+			);
 			productRefGroup = 17CB004724ED3655007FCCE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -148,6 +159,7 @@
 			files = (
 				17CB00BA24EEA8B4007FCCE5 /* UserDefaultsExplorerPlugin.swift in Sources */,
 				17CB00B924EEA8B4007FCCE5 /* DispatchQueue+ex.swift in Sources */,
+				17F1E69D24F8DC7E00CCA514 /* UserDefaultsExplorerSocketPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +365,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17F1E69E24F8E09500CCA514 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/robbiehanson/CocoaAsyncSocket.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17F1E69F24F8E09500CCA514 /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17F1E69E24F8E09500CCA514 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17CB003D24ED3655007FCCE5 /* Project object */;
 }
