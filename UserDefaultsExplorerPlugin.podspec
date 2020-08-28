@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "UserDefaultsExplorerPlugin"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "UserDefaultsExplorer Plugin"
   spec.homepage     = "https://github.com/t-osawa-009/UserDefaultsExplorerPlugin"
   spec.license          = 'MIT'

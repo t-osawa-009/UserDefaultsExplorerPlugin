@@ -1,5 +1,6 @@
 # UserDefaultsExplorerPlugin
 - [UserDefaultsExplorer](https://github.com/t-osawa-009/UserDefaultsExplorer) plugin.
+- Userdefaults can edit by xml format
 
 ## Requirements
 - Swift 5.x
