@@ -3,12 +3,6 @@ import CocoaAsyncSocket
 
 public class UserDefaultsExplorerSocketPlugin: NSObject {
     // MARK: - public
-    public func send(data: Data) {
-        sockets.forEach { (_s) in
-            _s.write(data, withTimeout: -1.0, tag: 0)
-        }
-    }
-    
     public func start() {
         services.removeAll(keepingCapacity: true)
         sockets.removeAll(keepingCapacity: true)
@@ -26,10 +20,20 @@ public class UserDefaultsExplorerSocketPlugin: NSObject {
     }
     
     // MARK: - initializer
-    public convenience init(type: String, domain: String) {
+    public convenience init(type: String, domain: String, userDefaults: UserDefaults = UserDefaults.standard) {
         self.init()
         self.type = type
         self.domain = domain
+        self.userDefaults = userDefaults
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (_) in
+            guard let _self = self else { return }
+            _self.debounce {
+                DispatchQueue.main.async {
+                    _self.send()
+                }
+            }
+        }
         start()
     }
     
@@ -58,6 +62,24 @@ public class UserDefaultsExplorerSocketPlugin: NSObject {
         return _isConnected
     }
     
+    private func send() {
+        let dic = userDefaults.dictionaryRepresentation()
+        let data: [String: Any] = [
+            "id": UUID().uuidString,
+            "timestamp": Date().timeIntervalSinceReferenceDate,
+            "data": dic
+        ]
+        
+        guard JSONSerialization.isValidJSONObject(data),
+            let json = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted) else {
+                return
+        }
+        sockets.forEach { (_s) in
+            _s.write(json, withTimeout: -1.0, tag: 0)
+        }
+    }
+    private let debounce = DispatchQueue.global().debounce(delay: .milliseconds(500))
+    private var userDefaults: UserDefaults!
     private var type: String!
     private var domain: String!
     private var services: [NetService] = []
